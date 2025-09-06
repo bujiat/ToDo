@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>待办事项</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🌸 我的待办事项 🌸</h1>
+    </header>
+    
+    <main>
+      <!-- 添加任务区域 -->
+      <section class="add-task-section">
+        <form id="todo-form" class="add-form">
+          <div class="input-group">
+            <input type="text" id="new-task" placeholder="输入新的待办事项..." required>
+            <button type="submit" class="add-btn">
+              <span>✨ 添加</span>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- 任务列表区域 -->
+      <section class="task-section">
+        <!-- 标签页导航 -->
+        <div class="tab-navigation">
+          <button class="tab-btn active" data-tab="all">📋 全部</button>
+          <button class="tab-btn" data-tab="pending">⏰ 待办</button>
+          <button class="tab-btn" data-tab="completed">✅ 已完成</button>
+        </div>
+
+        <!-- 任务列表容器 -->
+        <div class="task-container">
+          <!-- 全部任务列表 -->
+          <div class="task-list-container active" id="all-tasks">
+            <h2>📋 全部任务</h2>
+            <ul class="task-list" id="all-list">
+              <!-- 所有任务将显示在这里 -->
+            </ul>
+          </div>
+
+          <!-- 待办任务列表 -->
+          <div class="task-list-container" id="pending-tasks">
+            <h2>⏰ 待办任务</h2>
+            <ul class="task-list" id="pending-list">
+              <!-- 待办任务将显示在这里 -->
+            </ul>
+          </div>
+
+          <!-- 已完成任务列表 -->
+          <div class="task-list-container" id="completed-tasks">
+            <h2>✅ 已完成任务</h2>
+            <ul class="task-list" id="completed-list">
+              <!-- 已完成任务将显示在这里 -->
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 清除按钮区域 -->
+      <section class="clear-section">
+        <div class="clear-buttons">
+          <button class="clear-btn clear-completed-btn" onclick="todoApp.clearCompleted()">
+            🗑️ 清除已完成
+          </button>
+          <button class="clear-btn clear-all-btn" onclick="todoApp.clearAll()">
+            ⚠️ 清除所有
+          </button>
+        </div>
+      </section>
+    </main>
+  </div>
+  
+  <script src="js/script.js"></script>
+</body>
+</html>
